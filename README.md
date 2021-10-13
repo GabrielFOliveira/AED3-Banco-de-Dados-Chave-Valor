@@ -12,7 +12,7 @@
 ## Desenvolvedores:
 - Gabriel França Oliveira ([@GabrielFOliveira](https://github.com/GabrielFOliveira))
 - Milleny Teixeira de Souza ([@millenyteixeira](https://github.com/millenyteixeira))
-- Rapphael Felipe Silva Pereira ([@rfspereir](https://github.com/rfspereir))
+- Rafael Felipe Silva Pereira ([@rfspereir](https://github.com/rfspereir))
 
 ---
 

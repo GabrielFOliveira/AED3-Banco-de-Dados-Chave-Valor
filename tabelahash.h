@@ -5,6 +5,8 @@
 //========================================
 
 #define MAX 10000
+
+using std::string;
 //========================================
 typedef struct TabelaHash{
   Lista tabela[MAX];
@@ -25,9 +27,10 @@ void print_tabela_hash(TabelaHash *th){
 
 
 
-int converter(char *a){
+int converter(string a){
+  
   int soma;
-    for ( int i = 0; i < (int) strlen(a); i++ ){
+    for ( int i = 0; i < a.length(); i++ ){
         soma = soma+a[i];
     }
   return soma;
@@ -45,7 +48,7 @@ void add_hash(TabelaHash *th, Registro dado){
 }
 
 /*Registro pesquisa_hash(TabelaHash *th, int reg){
-
+  
   int pos = hash(reg);
 
   return pesquisa_lista(&th->tabela[pos],reg);

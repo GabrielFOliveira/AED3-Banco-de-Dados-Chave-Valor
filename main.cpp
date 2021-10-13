@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include <tabelahash.h>
+#include "tabelahash.h"
 
 int main(){
 
@@ -10,7 +10,9 @@ TabelaHash tabela;
 
 new_hash(&tabela);
 
-string a[] = "oioioioi";
+Registro a;
+
+a.reg="testestring";
 
 add_hash(&tabela,a);
 

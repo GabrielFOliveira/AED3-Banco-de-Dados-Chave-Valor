@@ -6,8 +6,8 @@
 #include <string.h>
 //========================================
 typedef struct Registro{
-  char reg[100000];
-}Registro;
+  std::string reg;
+};
 
 void print_registro(Registro c){
   printf("\nMunicipio: %s \n",
