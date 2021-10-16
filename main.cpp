@@ -9,17 +9,22 @@ int main(int argc, char *argv[]){
   // Comente a linha 12 para rodar seu teste contido no if abaixo
   // Se não cairá no CMD
   int teste = 1;
-  teste=0;
+  //teste=0;
   if (teste == 1){
-    TabelaHash tabela;
+   /* TabelaHash tabela;
     new_hash(&tabela);
     Registro a;
     a.reg="testestring";
     add_hash(&tabela,a);
     print_tabela_hash(&tabela);
+    */
+   /* char str[]= "teste=sim";
+    char delim[] = "=";
+    char *ptr = strtok(str, delim);
+    printf("%s", str);*/
   }
   else{
-    if (argc == 1 || strcmp(argv[2],"--help")==0){
+    if (argc == 1 || strcmp(argv[2],"--help") == 0){
         printf("simpledb [cmd]\n"
         "  --insert=<sort-key,value> \n      Insere um objeto no banco de dados.\n"
         "  --remove=<key>\n      Remove do banco de dados o objeto identificado pela chave key.\n"
@@ -36,11 +41,38 @@ int main(int argc, char *argv[]){
         "  --compress=[huffman|lzw]\n      Compacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n"
         "  --decompress=[huffman|lzw]\n      Descompacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n"
         "");
+    }
+    else{
+      char arg[];
+      strcpy(arg,argv[2]);
+      char delim[] = "=";
+      char *ptr = strtok(str, delim);
+      if(strcmp(arg,"--insert")==0){
 
+      }
+      if(strcmp(arg,"--remove")==0){
+
+      }
+      if(strcmp(arg,"--search")==0){
+
+      }
+      if(strcmp(arg,"--update")==0){
+
+      }
+      if(strcmp(arg,"--list")==0){
+
+      }
+      if(strcmp(arg,"--reverse-list")==0){
+
+      }
+      if(strcmp(arg,"--compress")==0){
+
+      }
+      if(strcmp(arg,"--decompress")==0){
+
+      }
     }
   }
-
-
-return 0;
+  return 0;
 }
 
