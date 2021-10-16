@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
       char arg[];
       strcpy(arg,argv[2]);
       char delim[] = "=";
-      char *ptr = strtok(str, delim);
+      char *arg = strtok(str, delim);
       if(strcmp(arg,"--insert") == 0){
 
       }
