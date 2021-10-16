@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
   // Comente a linha 12 para rodar seu teste contido no if abaixo
   // Se não cairá no CMD
   int teste = 1;
-  //teste=0;
+  teste=0;
   if (teste == 1){
    /* TabelaHash tabela;
     new_hash(&tabela);
@@ -24,6 +24,8 @@ int main(int argc, char *argv[]){
     if(strcmp(str,"teste") == 0){
       printf("%s", str);
     }
+    ptr = strtok(NULL, delim);
+    printf("%c", ptr[0]);
   }
   else{
     if (argc == 1 || strcmp(argv[2],"--help") == 0){
@@ -45,33 +47,63 @@ int main(int argc, char *argv[]){
         "");
     }
     else{
-      char arg[];
-      strcpy(arg,argv[2]);
+      char *str;
+      strcpy(str,argv[2]);
       char delim[] = "=";
-      char *arg = strtok(str, delim);
+      char *arg = strtok(str, delim); // arg recebe a string do comando até o =
       if(strcmp(arg,"--insert") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        char *valores = strtok(arg,","); // valores recebe o sort-key
+        int sortkey = (int)valores[0];
+        valores = strtok(NULL,",");  // valores recebe o value
+        //insert(sortkey,valores);
+      }
+      else if(strcmp(arg,"--remove") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        //remove(arg);
+      }
+      else if(strcmp(arg,"--search") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        //search(arg);
+      }
+      else if(strcmp(arg,"--update") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        char *valores = strtok(arg,","); // valores recebe a key
+        char *key, value;
+        int sortkey;
+        strcpy(key,valores);
+        valores = strtok(NULL,",");  // valores recebe a sort-key
+        sortkey= (int)valores[0];
+        valores = strtok(NULL,",");  // valores recebe o value
+        //update(key,sort-key,valores)
 
       }
-      if(strcmp(arg,"--remove") == 0){
+      else if(strcmp(arg,"--list") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
+        // a fazer
+      }
+      else if(strcmp(arg,"--reverse-list") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
+        // a fazer
+      }
+      else if(strcmp(arg,"--compress") == 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        if(strcmp(arg,"lzw") == 0){
+          //crompresslzw();
+        }
+        else if(strcmp(arg,"huffman") == 0){
+          //crompresshuffman();
+        }
 
       }
-      if(strcmp(arg,"--search") == 0){
-
-      }
-      if(strcmp(arg,"--update") == 0){
-
-      }
-      if(strcmp(arg,"--list") == 0){
-
-      }
-      if(strcmp(arg,"--reverse-list") == 0){
-
-      }
-      if(strcmp(arg,"--compress") == 0){
-
-      }
-      if(strcmp(arg,"--decompress")== 0){
-
+      else if(strcmp(arg,"--decompress")== 0){
+        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        if(strcmp(arg,"lzw") == 0){
+          //crompresslzw();
+        }
+        else if(strcmp(arg,"huffman") == 0){
+          //crompresshuffman();
+        }
       }
     }
   }
