@@ -43,8 +43,7 @@ int main(int argc, char *argv[]){
         "      key>=X: objetos que possuem chave de ordenacao maior ou igual que X.\n"
         "      key<=X: objetos que possuem chave de ordenacao menor ou igual que X.\n"
         "  --compress=[huffman|lzw]\n      Compacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n"
-        "  --decompress=[huffman|lzw]\n      Descompacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n"
-        "");
+        "  --decompress=[huffman|lzw]\n      Descompacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n");
     }
     else{
       char *str;
@@ -57,14 +56,17 @@ int main(int argc, char *argv[]){
         int sortkey = (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //insert(sortkey,valores);
+        printf("O metodo insert ainda não foi implementado hehe\nSortkey: %d\nValue: %s\n", sortkey, valores);
       }
       else if(strcmp(arg,"--remove") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o =
         //remove(arg);
+        printf("O metodo remove ainda não foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--search") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o =
         //search(arg);
+        printf("O metodo search ainda não foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--update") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o =
@@ -76,33 +78,39 @@ int main(int argc, char *argv[]){
         sortkey= (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //update(key,sort-key,valores)
+        printf("O metodo update ainda não foi implementado hehe\nKey: %s\nSortKey: %d\nValue:%s\n",key,sortkey,valores);
 
       }
       else if(strcmp(arg,"--list") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
         // a fazer
+        printf("O metodo list ainda não foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--reverse-list") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
         // a fazer
+        printf("O metodo resvese-list ainda não foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--compress") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o =
         if(strcmp(arg,"lzw") == 0){
-          //crompresslzw();
+          //compresslzw();
+          printf("O metodo compresslzw ainda não foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
-          //crompresshuffman();
+          //compresshuffman();
+          printf("O metodo compresshuffman ainda não foi implementado hehe\n");
         }
-
       }
       else if(strcmp(arg,"--decompress")== 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando após o =
         if(strcmp(arg,"lzw") == 0){
-          //crompresslzw();
+          //decompresslzw();
+          printf("O metodo decompresslzw ainda não foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
-          //crompresshuffman();
+          //decompresshuffman();
+          printf("O metodo decompresshuffman ainda não foi implementado hehe\n");
         }
       }
     }
