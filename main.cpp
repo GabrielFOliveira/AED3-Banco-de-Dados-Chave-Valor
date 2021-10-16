@@ -18,10 +18,12 @@ int main(int argc, char *argv[]){
     add_hash(&tabela,a);
     print_tabela_hash(&tabela);
     */
-   /* char str[]= "teste=sim";
+   char str[]= "teste=sim";
     char delim[] = "=";
     char *ptr = strtok(str, delim);
-    printf("%s", str);*/
+    if(strcmp(str,"teste") == 0){
+      printf("%s", str);
+    }
   }
   else{
     if (argc == 1 || strcmp(argv[2],"--help") == 0){
@@ -47,28 +49,28 @@ int main(int argc, char *argv[]){
       strcpy(arg,argv[2]);
       char delim[] = "=";
       char *ptr = strtok(str, delim);
-      if(strcmp(arg,"--insert")==0){
+      if(strcmp(arg,"--insert") == 0){
 
       }
-      if(strcmp(arg,"--remove")==0){
+      if(strcmp(arg,"--remove") == 0){
 
       }
-      if(strcmp(arg,"--search")==0){
+      if(strcmp(arg,"--search") == 0){
 
       }
-      if(strcmp(arg,"--update")==0){
+      if(strcmp(arg,"--update") == 0){
 
       }
-      if(strcmp(arg,"--list")==0){
+      if(strcmp(arg,"--list") == 0){
 
       }
-      if(strcmp(arg,"--reverse-list")==0){
+      if(strcmp(arg,"--reverse-list") == 0){
 
       }
-      if(strcmp(arg,"--compress")==0){
+      if(strcmp(arg,"--compress") == 0){
 
       }
-      if(strcmp(arg,"--decompress")==0){
+      if(strcmp(arg,"--decompress")== 0){
 
       }
     }
