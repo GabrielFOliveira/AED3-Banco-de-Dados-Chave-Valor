@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <string.h>
 
-#include "tabelahash.h"
 
 int main(int argc, char *argv[]){
   // A variavel "teste" e usada para debug
   // Comente a linha 12 para rodar seu teste contido no if abaixo
-  // Se não cairá no CMD
+  // Se nï¿½o cairï¿½ no CMD
   int teste = 1;
   teste=0;
   if (teste == 1){
@@ -49,27 +49,27 @@ int main(int argc, char *argv[]){
       char *str;
       strcpy(str,argv[2]);
       char delim[] = "=";
-      char *arg = strtok(str, delim); // arg recebe a string do comando até o =
+      char *arg = strtok(str, delim); // arg recebe a string do comando atï¿½ o =
       if(strcmp(arg,"--insert") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         char *valores = strtok(arg,","); // valores recebe o sort-key
         int sortkey = (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //insert(sortkey,valores);
-        printf("O metodo insert ainda não foi implementado hehe\nSortkey: %d\nValue: %s\n", sortkey, valores);
+        printf("O metodo insert ainda nï¿½o foi implementado hehe\nSortkey: %d\nValue: %s\n", sortkey, valores);
       }
       else if(strcmp(arg,"--remove") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         //remove(arg);
-        printf("O metodo remove ainda não foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo remove ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--search") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         //search(arg);
-        printf("O metodo search ainda não foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo search ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--update") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         char *valores = strtok(arg,","); // valores recebe a key
         char *key, value;
         int sortkey;
@@ -78,39 +78,39 @@ int main(int argc, char *argv[]){
         sortkey= (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //update(key,sort-key,valores)
-        printf("O metodo update ainda não foi implementado hehe\nKey: %s\nSortKey: %d\nValue:%s\n",key,sortkey,valores);
+        printf("O metodo update ainda nï¿½o foi implementado hehe\nKey: %s\nSortKey: %d\nValue:%s\n",key,sortkey,valores);
 
       }
       else if(strcmp(arg,"--list") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o primeiro = e atï¿½ o 2o
         // a fazer
-        printf("O metodo list ainda não foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo list ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--reverse-list") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o primeiro = e até o 2o
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o primeiro = e atï¿½ o 2o
         // a fazer
-        printf("O metodo resvese-list ainda não foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo resvese-list ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--compress") == 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         if(strcmp(arg,"lzw") == 0){
           //compresslzw();
-          printf("O metodo compresslzw ainda não foi implementado hehe\n");
+          printf("O metodo compresslzw ainda nï¿½o foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
           //compresshuffman();
-          printf("O metodo compresshuffman ainda não foi implementado hehe\n");
+          printf("O metodo compresshuffman ainda nï¿½o foi implementado hehe\n");
         }
       }
       else if(strcmp(arg,"--decompress")== 0){
-        arg = strtok(NULL, delim); // arg recebe a string do comando após o =
+        arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         if(strcmp(arg,"lzw") == 0){
           //decompresslzw();
-          printf("O metodo decompresslzw ainda não foi implementado hehe\n");
+          printf("O metodo decompresslzw ainda nï¿½o foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
           //decompresshuffman();
-          printf("O metodo decompresshuffman ainda não foi implementado hehe\n");
+          printf("O metodo decompresshuffman ainda nï¿½o foi implementado hehe\n");
         }
       }
     }
