@@ -58,17 +58,17 @@ int main(int argc, char *argv[]){
         int sortkey = (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //insert(sortkey,valores);
-        printf("O metodo insert ainda n�o foi implementado hehe\nSortkey: %d\nValue: %s\n", sortkey, valores);
+        printf("O metodo insert ainda nao foi implementado hehe\nSortkey: %d\nValue: %s\n", sortkey, valores);
       }
       else if(strcmp(arg,"--remove") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando ap�s o =
         //remove(arg);
-        printf("O metodo remove ainda n�o foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo remove ainda nao foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--search") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando ap�s o =
         //search(arg);
-        printf("O metodo search ainda n�o foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo search ainda nao foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--update") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando ap�s o =
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]){
         }
         else if(strcmp(arg,"huffman") == 0){
           //decompresshuffman();
-          printf("O metodo decompresshuffman ainda n�o foi implementado hehe\n");
+          printf("O metodo decompresshuffman ainda nao foi implementado hehe\n");
         }
       }
     }
