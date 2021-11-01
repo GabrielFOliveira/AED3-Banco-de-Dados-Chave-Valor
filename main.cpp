@@ -2,33 +2,37 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
+#include "bucket.h"
 
 
 int main(int argc, char *argv[]){
   // A variavel "teste" e usada para debug
-  // Comente a linha 12 para rodar seu teste contido no if abaixo
-  // Se nï¿½o cairï¿½ no CMD
+
+  // Comente a linha 11 para rodar seu teste contido no if abaixo
+  // Se não cairá no CMD
   int teste = 1;
   teste=0;
   if (teste == 1){
-   /* TabelaHash tabela;
-    new_hash(&tabela);
-    Registro a;
-    a.reg="testestring";
-    add_hash(&tabela,a);
-    print_tabela_hash(&tabela);
-    */
-   char str[]= "teste=sim";
-    char delim[] = "=";
-    char *ptr = strtok(str, delim);
-    if(strcmp(str,"teste") == 0){
-      printf("%s", str);
-    }
-    ptr = strtok(NULL, delim);
-    printf("%c", ptr[0]);
+
+
+
   }
   else{
-    if (argc == 1 || strcmp(argv[2],"--help") == 0){
+    int counter;
+    //printf("Program Name Is: %s",argv[0]);
+
+    if(argc>=2)
+    {
+        printf("\nNumber Of Arguments Passed: %d",argc);
+        printf("\n----Following Are The Command Line Arguments Passed----");
+        for(counter=0;counter<argc;counter++)
+            printf("\nargv[%d]: %s",counter,argv[counter]);
+    }
+
+
+
+    char *str;
+    if (argc == 1 || strcmp(argv[1],"--help") == 0){
         printf("simpledb [cmd]\n"
         "  --insert=<sort-key,value> \n      Insere um objeto no banco de dados.\n"
         "  --remove=<key>\n      Remove do banco de dados o objeto identificado pela chave key.\n"
@@ -46,10 +50,8 @@ int main(int argc, char *argv[]){
         "  --decompress=[huffman|lzw]\n      Descompacta os registros do banco de dados usando o algoritmo de Codificacao de Huffman ou o Algoritmo de Compressao LZW. \n");
     }
     else{
-      char *str;
-      strcpy(str,argv[2]);
       char delim[] = "=";
-      char *arg = strtok(str, delim); // arg recebe a string do comando atï¿½ o =
+      char *arg = strtok(argv[1], delim); // arg recebe a string do comando até o =
       if(strcmp(arg,"--insert") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         char *valores = strtok(arg,","); // valores recebe o sort-key
@@ -78,35 +80,35 @@ int main(int argc, char *argv[]){
         sortkey= (int)valores[0];
         valores = strtok(NULL,",");  // valores recebe o value
         //update(key,sort-key,valores)
-        printf("O metodo update ainda nï¿½o foi implementado hehe\nKey: %s\nSortKey: %d\nValue:%s\n",key,sortkey,valores);
+        printf("O metodo update ainda nao foi implementado hehe\nKey: %s\nSortKey: %d\nValue:%s\n",key,sortkey,valores);
 
       }
       else if(strcmp(arg,"--list") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o primeiro = e atï¿½ o 2o
         // a fazer
-        printf("O metodo list ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo list ainda nao foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--reverse-list") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o primeiro = e atï¿½ o 2o
         // a fazer
-        printf("O metodo resvese-list ainda nï¿½o foi implementado hehe\nKey: %s\n",arg);
+        printf("O metodo resvese-list ainda nao foi implementado hehe\nKey: %s\n",arg);
       }
       else if(strcmp(arg,"--compress") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         if(strcmp(arg,"lzw") == 0){
           //compresslzw();
-          printf("O metodo compresslzw ainda nï¿½o foi implementado hehe\n");
+          printf("O metodo compresslzw ainda nao foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
           //compresshuffman();
-          printf("O metodo compresshuffman ainda nï¿½o foi implementado hehe\n");
+          printf("O metodo compresshuffman ainda nao foi implementado hehe\n");
         }
       }
       else if(strcmp(arg,"--decompress")== 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         if(strcmp(arg,"lzw") == 0){
           //decompresslzw();
-          printf("O metodo decompresslzw ainda nï¿½o foi implementado hehe\n");
+          printf("O metodo decompresslzw ainda nao foi implementado hehe\n");
         }
         else if(strcmp(arg,"huffman") == 0){
           //decompresshuffman();
