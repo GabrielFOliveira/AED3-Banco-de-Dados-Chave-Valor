@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
-#include "bucket.h"
+#include "Bucket.h"
+#include "Directory.h"
 
 
 int main(int argc, char *argv[]){
   // A variavel "teste" e usada para debug
 
   // Comente a linha 11 para rodar seu teste contido no if abaixo
-  // Se não cairá no CMD
+  // Se nï¿½o cairï¿½ no CMD
   int teste = 1;
   teste=0;
   if (teste == 1){
@@ -51,7 +52,7 @@ int main(int argc, char *argv[]){
     }
     else{
       char delim[] = "=";
-      char *arg = strtok(argv[1], delim); // arg recebe a string do comando até o =
+      char *arg = strtok(argv[1], delim); // arg recebe a string do comando atï¿½ o =
       if(strcmp(arg,"--insert") == 0){
         arg = strtok(NULL, delim); // arg recebe a string do comando apï¿½s o =
         char *valores = strtok(arg,","); // valores recebe o sort-key
