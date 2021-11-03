@@ -2,3 +2,5 @@
 main.exe
 main.o
 main
+.idea*
+.vscode*
